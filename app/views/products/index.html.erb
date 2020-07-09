@@ -1,0 +1,17 @@
+<% if @products.present? %>
+
+  <h4> Total Results : <%= @products.count %> </h4>
+  <% @products.each.with_index(1) do |product, index| %>
+    <div class="product-info">
+      <label for=""> Name : <%= product.name %>  </label> <br/>
+      <label for=""> Price : <%= product.price %>  </label> <br/>
+      <label for=""> Description : <%= product.description.present? ? product.description : 'Description not found' %> </label> <br/>
+      <label for=""> Extra information : <%= product.extra_information.present? ? product.extra_information : 'Extra information not found' %> </label>
+    </div>
+    <hr>
+  <% end %>
+<% else %>
+  <div class="alert alert-info">
+    <h5> No Products Found ! </h5>
+  </div>
+<% end %>

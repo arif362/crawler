@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<!--  <head>-->
+<!--    <title>Crawler</title>-->
+    <%#= csrf_meta_tags %>
+    <%#= csp_meta_tag %>
+
+    <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+<!--  </head>-->
+
+<!--  <body>-->
+    <%#= yield %>
+<!--  </body>-->
+
+<head>
+  <title>Web Crawler</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- For font awesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+
+<body class="container mt-4">
+<%= render 'shared/header' %>
+<%= yield %>
+</body>
+</html>
