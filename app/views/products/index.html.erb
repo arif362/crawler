@@ -1,7 +1,7 @@
 <% if @products.present? %>
 
   <h4> Total Results : <%= @products.count %> </h4>
-  <% @products.each.with_index(1) do |product, index| %>
+  <% @products.each do |product| %>
     <div class="product-info">
       <label for=""> Name : <%= product.name %>  </label> <br/>
       <label for=""> Price : <%= product.price %>  </label> <br/>

@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
 
   def search
     Product.scrap_data
-    redirect_to products_path
+    redirect_to root_path
   end
 
 end
