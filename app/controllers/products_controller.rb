@@ -8,10 +8,10 @@ class ProductsController < ApplicationController
   def search
     url = params[:page_url].present? ? params[:page_url] : 'https://magento-test.finology.com.my/breathe-easy-tank.html'
     if Product.valid_url?(url)
-      Product.scrap_data(url)
-      redirect_to root_path
+      result = Product.scrap_data(url)
+      redirect_to products_path, warning: result
     else
-      redirect_to root_path, notice: 'Url not valid; Please use a valid url from your reference site'
+      redirect_to root_path, danger: 'Url not valid; Please use a valid url from your reference site'
     end
   end
 end

@@ -9,11 +9,14 @@ class Product < ApplicationRecord
   # Methods
   def self.scrap_data(url)
     url_list = page_urls(url)
+    return 'Something went wrong, Please try another url' if url_list.nil?
+
     url_list.each do |target_url|
       Rails.cache.fetch("target_url_#{target_url}", expires_in: 12.hours) do
         scrap_from_url(target_url) if valid_url?(target_url)
       end
     end
+    'Data Scrapping successful !!'
   end
 
   def self.valid_url?(url)
@@ -45,6 +48,8 @@ class Product < ApplicationRecord
     url_list = parsed_url.css('.product-item a').map { |anchor| anchor['href'] }
     url_list << url
     url_list
+  rescue StandardError => e
+    nil
   end
 
   def self.process_data(page)

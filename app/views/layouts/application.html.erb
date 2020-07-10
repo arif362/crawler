@@ -16,7 +16,7 @@
 
 <body class="container mt-4">
 <%= render 'shared/header' %>
-<p class="notice"><%= notice %></p>
+<%= render 'shared/flash_message' %>
 <div class="<%= user_signed_in? ? '' : 'instant-login-style' %>">
   <%= yield %>
 </div>
