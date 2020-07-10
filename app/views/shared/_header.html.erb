@@ -1,13 +1,14 @@
 <div class="col-md-12 row">
-  <div class="col-md-6 p-0">
-    <h4> Web Crawler </h4>
+  <div class="col-md-2 p-0">
+    <h4>
+      <%= link_to 'Web Crawler', root_path %>
+    </h4>
   </div>
-  <div class="col-md-6 p-0">
-    <div class="text-right">
-      <%= button_to  search_products_path, class:'text-right btn btn-primary' do %>
-        Crawler Search
-      <% end %>
-    </div>
+  <div class="col-md-8 p-0">
+    <%= render 'shared/crawel_form' if user_signed_in? %>
+  </div>
+  <div class="col-md-2 p-0">
+    <%= render 'shared/log_in_out' %>
   </div>
 </div>
 <hr/>

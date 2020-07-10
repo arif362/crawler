@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+.instant-login-style{
+    border: 1px solid #adbdb873;
+    width: 330px;
+    padding: 60px;
+    margin: auto;
+}

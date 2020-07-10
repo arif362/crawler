@@ -1,0 +1,11 @@
+<div class="text-right">
+  <% if user_signed_in? %>
+    <%= link_to destroy_user_session_path, method: :delete, class: 'text-right' do %>
+      Log Out
+    <% end %>
+  <% else %>
+    <%= link_to new_user_session_path, class: 'text-right' do %>
+      Login
+    <% end %>
+  <% end %>
+</div>
