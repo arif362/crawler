@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'products#index'
   resources :products do
     collection do
-      post :search
+      get :search
     end
   end
 end

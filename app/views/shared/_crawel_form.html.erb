@@ -1,10 +1,10 @@
 <div class="col-md-12 p-0">
-  <%= form_tag(search_products_path) do %>
+  <%= form_tag(search_products_path, method: :get) do %>
     <div class="text-right row">
       <%= text_field_tag :page_url,
                          nil,
                          class: 'form-control col-md-9',
-                         placeholder: 'Past an url from your reference site' %>
+                         placeholder: 'url like : https://magento-test.finology.com.my/breathe-easy-tank.html)' %>
       <%= submit_tag 'Submit', class: 'text-right btn btn-primary col-mf-3 text-right' %>
     </div>
   <% end %>

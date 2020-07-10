@@ -1,0 +1,7 @@
+<div class="float-right">
+  <%= link_to 'Go To Products List', products_path %>
+</div>
+<h4 class="border-bottom"> Crawler Result : <%= @scrapping_products.length %> </h4>
+<%= render partial: 'products/product',
+           collection: @scrapping_products,
+           cached: true unless @scrapping_products.empty?%>

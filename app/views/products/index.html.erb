@@ -1,11 +1,9 @@
 <% if @products.present? %>
-  <h4> Total Results : <%= Product.count %> </h4>
+  <h4 class="border-bottom"> Products List : <small> Total(<%= Product.count %>) </small></h4>
   <%= render partial: 'products/product', collection: @products, cached: true %>
 <% else %>
   <div class="alert alert-info">
     <h5> No Products Found ! </h5>
   </div>
 <% end %>
-<div class="text-center">
-  <%= will_paginate @products %>
-</div>
+<%= will_paginate @products %>
