@@ -13,7 +13,7 @@ class CrawlerService
         scrap_from_url(target_url, scrapping_products) if UrlValidationService.valid_url?(target_url)
       end
     end
-    return result(scrapping_products)
+    result(scrapping_products)
   end
 
   def self.result(scrapping_products)

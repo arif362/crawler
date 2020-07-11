@@ -3,7 +3,12 @@
   <%= render partial: 'products/product', collection: @products, cached: true %>
 <% else %>
   <div class="alert alert-info">
-    <h5> No Products Found ! </h5>
+    <h5> No Products Found !
+      It is added the default url('https://magento-test.finology.com.my/breathe-easy-tank.html') from
+      which page data scrapping should start <%= link_to 'Click Here', search_products_path %>
+      or copy an url and paste into header input field to scrap data from your reference
+      magento site('https://magento-test.finology.com.my').
+    </h5>
   </div>
 <% end %>
 <%= will_paginate @products %>
